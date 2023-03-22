@@ -1,0 +1,110 @@
+body {
+  margin: 0;
+  color: rgb(0, 0, 0);
+  font-size: 15px;
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+.active {
+  color: white;
+}
+.container {
+  width: 100%;
+  max-width: 1200;
+  margin: 0 auto;
+}
+nav {
+  font-size: 16px;
+}
+.navbar {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0 4rem;
+  width: 100%;
+  background-color: rgb(33, 37, 41);
+}
+.nav-link {
+  display: inline-block;
+  padding: 0 10px;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.55);
+}
+.nav-link:hover {
+  color: rgba(255, 255, 255, 0.77);
+  transition: color 0.1s linear;
+}
+.nav-link.active {
+  color: rgba(255, 255, 255, 0.77);
+}
+.navbar-image {
+  display: block;
+  padding: 8px;
+  width: 56px;
+  height: 64px;
+}
+.rounded-image {
+  height: 381px;
+  width: 381px;
+  margin-top: 7em;
+  border-radius: 50%;
+  margin-bottom: 2em;
+  box-shadow: 0 0 30px rgb(6 18 177);
+}
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.title {
+  font-size: 2.5rem;
+  text-align: center;
+  font-weight: bolder;
+}
+.description {
+  font-size: 1.25rem;
+  font-weight: 300;
+  margin-top: 8px;
+}
+.button-primary {
+  color: white;
+  border: 10px solid;
+  border-color: #0d6efd;
+  background-color: #0d6efd;
+  border-radius: 10px;
+  display: inline-block;
+  text-decoration: none;
+}
+.button-primary:hover {
+  border-color: #0a58ca;
+  background-color: #0a58ca;
+  transition: background-color 0.2s linear, border-color 0.2s linear;
+}
+.button-secondary {
+  color: white;
+  border: 10px solid;
+  border-color: #212529;
+  background-color: #212529;
+  border-radius: 10px;
+  display: inline-block;
+  text-decoration: none;
+}
+.button-secondary:hover {
+  border-color: #373b3e;
+  background-color: #373b3e;
+  transition: background-color 0.2s linear, border-color 0.2s linear;
+}

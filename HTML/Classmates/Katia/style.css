@@ -1,0 +1,111 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+body {
+  margin: 0;
+  color: black;
+  font-size: 16px;
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
+}
+.container {
+  width: 100%;
+  max-width: 1200;
+  margin: 0 auto;
+}
+.active {
+  color: white;
+}
+.navbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 4rem;
+  background-color: rgb(33, 37, 41);
+}
+.nav-link {
+  display: inline-block;
+  padding: 0 10px;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.55);
+}
+.navbar-image {
+  display: block;
+  margin: 8px;
+  width: 40px;
+  height: 48px;
+}
+.nav-link:hover {
+  color: rgba(255, 255, 255, 0.77);
+  transition: color 0.1s linear;
+}
+.nav-link.active {
+  color: rgba(255, 255, 255, 0.77);
+}
+.rounded-image {
+  height: 381px;
+  width: 381px;
+  margin: 7em 0 2em 0;
+  border-radius: 60%;
+  box-shadow: 0 0 30px rgb(6 18 177);
+}
+.image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: bolder;
+}
+.subtitle {
+  font-size: 1.25rem;
+  text-align: center;
+  margin-top: 8px;
+  font-weight: 300;
+}
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.button-primary {
+  display: inline-block;
+  color: white;
+  border: 10px solid;
+  border-color: #0d6efd;
+  background-color: #0d6efd;
+  border-radius: 10px;
+  text-decoration: none;
+}
+.button-secondary {
+  display: inline-block;
+  color: white;
+  border: 10px solid;
+  border-color: #212529;
+  background-color: #212529;
+  border-radius: 10px;
+  text-decoration: none;
+}
+.button-primary:hover {
+  border-color: #0a58ca;
+  background-color: #0a58ca;
+  transition: border-color 0.2s linear, background-color 0.2s linear;
+}
+.button-secondary:hover {
+  border-color: #373b3e;
+  background-color: #373b3e;
+  transition: border-color 0.2s linear, background-color 0.2s linear;
+}
