@@ -1,0 +1,130 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+}
+.container-main {
+  width: 72%;
+  margin: 0 auto;
+}
+.container {
+  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+  width: 100%;
+  margin: 0 auto;
+}
+/* header */
+.header_inner p {
+  margin-right: auto;
+  color: #fff;
+}
+.header_inner a {
+  color: #fff;
+}
+.header_inner a:hover {
+  color: #333;
+}
+.header_inner {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.container {
+  background-color: #63aae1;
+}
+.header_inner > div {
+  display: flex;
+  flex-shrink: 0;
+  padding: 15px 30px;
+}
+.header_inner p {
+  padding-left: 15px;
+}
+.header_inner li {
+  padding-left: 25px;
+}
+/* Panels */
+.main {
+  display: flex;
+  flex-shrink: 0;
+  justify-content: space-between;
+  padding: 16px 30px 0 30px;
+  margin: 0 auto;
+}
+.main {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.panel {
+  color: #fff;
+  background-color: #7782d2;
+  width: 66%;
+}
+.panel_inner {
+  margin: 25px 0 0 15px;
+}
+.panel_inner ul {
+  padding: 10px 0 0 0;
+  margin-left: 40px;
+}
+.login-forms {
+  width: 34%;
+  padding: 17px 15px 17px 40px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 25px;
+}
+/* Fonts-size */
+.text-xl {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 26px;
+}
+.text-lg {
+  font-size: 18px;
+  line-height: 20px;
+  font-weight: 400;
+}
+.text-md {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+}
+.text-btn {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 35px;
+}
+/* Buttons */
+.btn {
+  font-family: inherit;
+  display: inline-block;
+  padding: 7px;
+  color: #fff;
+  border-radius: 5px;
+  background-color: #333;
+  cursor: pointer;
+}
+.btn-blue {
+  background-color: #0088cc;
+  border: #2e6da4 solid 1px;
+}
+.btn-blue:hover {
+  background-color: #0077b3;
+}
+.btn-green {
+  background-color: #5dba5d;
+  border: #4cae4c solid 1px;
+}
+.btn-green:hover {
+  background-color: #4cb24c;
+}
+.btn-red {
+  background-color: #d24d70;
+  border: #d43f3a solid 1px;
+}
+.btn-red:hover {
+  background-color: #cd3960;
+}
