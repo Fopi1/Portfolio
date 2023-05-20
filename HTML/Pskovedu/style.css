@@ -51,26 +51,47 @@ a {
   flex-shrink: 0;
   justify-content: space-between;
   padding: 16px 30px 0 30px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   margin: 0 auto;
 }
-.main {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
 .panel {
+  display: block;
   color: #fff;
-  background-color: #7782d2;
   width: 66%;
 }
 .panel_inner {
-  margin: 25px 0 0 15px;
+  background-color: #7782d2;
 }
 .panel_inner ul {
-  padding: 10px 0 0 0;
-  margin-left: 40px;
+  padding: 10px 0 130px 0px;
+  margin-left: 65px;
+}
+.panel_inner h3 {
+  padding: 25px 0 0 15px;
+}
+.panel-slider {
+  margin-top: 30px;
+}
+.panel-slider_inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+.slider-button {
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+  border: none;
+  background-color: #0088cc;
+  border-radius: 100%;
 }
 .login-forms {
   width: 34%;
-  padding: 17px 15px 17px 40px;
+  padding: 0 15px 17px 40px;
+}
+.login-forms_inner {
+  padding-top: 15px;
   display: flex;
   justify-content: center;
   flex-direction: column;
