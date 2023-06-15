@@ -6,8 +6,12 @@
 a {
   text-decoration: none;
 }
+.hidden {
+  display: none !important;
+}
 .container-main {
-  width: 1170px;
+  max-width: 1170px;
+  width: 100%;
   margin: 0 auto;
 }
 .container {
@@ -61,9 +65,6 @@ a {
 }
 .panel-description {
   height: 229px;
-}
-.hidden {
-  display: none !important;
 }
 .panel-description ul {
   padding: 10px 0 0 0px;
@@ -138,6 +139,11 @@ a {
   font-weight: 400;
   font-size: 14px;
   line-height: 35px;
+}
+.manual-text-btn {
+  font-size: 17px;
+  line-height: 24px;
+  font-weight: 400;
 }
 /* Buttons */
 .btn {
@@ -241,8 +247,9 @@ a {
   font-size: 18px;
 }
 .news-block_inner {
+  min-height: 100px;
+  overflow: hidden;
   padding-top: 11px;
-  height: 650px;
   display: grid;
   grid-template-columns: repeat(4, 21.5%);
   justify-content: space-around;
@@ -265,4 +272,90 @@ span a:hover {
 .news-text {
   color: #333;
   padding-top: 10px;
+}
+/* Information */
+.information h3 {
+  padding-top: 46px;
+}
+.information-block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.information-block img {
+  padding-top: 10px;
+}
+/* Manual */
+.manuals h3 {
+  padding-top: 35px;
+}
+.manuals-block {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 20px;
+}
+.manuals-block > * {
+  margin-left: 20px;
+}
+.manual-button {
+  text-align: center;
+  color: #fff;
+  margin-top: 20px;
+  border: 1px solid #63aae1;
+  background-color: #63aae1;
+}
+.manual-button:hover {
+  text-decoration: underline;
+  background-color: #f2b219;
+  border-color: #f2b219;
+  color: white;
+}
+.manual-icon {
+  padding: 10px 30px 20px 30px;
+  display: block;
+  font-size: 2.5em;
+}
+/* Footer */
+.footer {
+  background-color: #63aae1;
+}
+.footer_inner {
+  color: #fff;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  padding: 5px 15px 5px 15px;
+}
+.footer_inner p {
+  padding-bottom: 5px;
+}
+.footer_inner a {
+  margin-left: 3px;
+  color: #fff;
+}
+.footer_inner a:hover {
+  text-decoration: underline;
+}
+@media (max-width: 1170px) {
+  .panel {
+    display: none;
+  }
+  .login-forms {
+    width: 100%;
+  }
+  .information-block img {
+    max-width: 700px;
+  }
+}
+@media (max-width: 700px) {
+  .information,
+  .information-block,
+  .manuals,
+  .manuals-block {
+    display: none;
+  }
+  .apps-block {
+    display: block;
+  }
 }
