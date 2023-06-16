@@ -1,5 +1,9 @@
 let currentId = 0;
 let pastId = 1;
+// Slider
+const panelButtons = document.getElementById("panelButtons");
+const panelButton = panelButtons.getElementsByTagName("button");
+const sliders = document.getElementsByClassName("panel-description");
 // Imgs
 const infoImgs = document.getElementsByClassName("info-img");
 const nextInfo = document.getElementById("nextInfo");
@@ -38,23 +42,26 @@ nextInfo.onclick = function () {
 };
 // Slide
 const switchSlide = (slideId) => {
-  if (slideId !== pastId) {
-    document
-      .getElementById(slideId)
-      .querySelector("button")
-      .classList.add("slider-active");
-    document
-      .getElementById("description" + " " + slideId)
-      .classList.remove("hidden");
-    document
-      .getElementById(pastId)
-      .querySelector("button")
-      .classList.remove("slider-active");
-    document
-      .getElementById("description" + " " + pastId)
-      .classList.add("hidden");
-    pastId = slideId;
+  for (let i = 0; i < panelButton.length; i++) {
+    if (i !== Number(slideId)) {
+      panelButton[i].classList.remove("slider-active");
+      sliders[i].classList.add("hidden");
+    } else {
+      panelButton[i].classList.add("slider-active");
+      sliders[i].classList.remove("hidden");
+    }
   }
+};
+const buttonId = () => {
+  panelButtons.addEventListener(
+    "click",
+    (e) => {
+      switchSlide(e.target.dataset.itemid);
+    },
+    {
+      once: true,
+    }
+  );
 };
 // News-Block
 const switchNews = (newsNumber) => {
