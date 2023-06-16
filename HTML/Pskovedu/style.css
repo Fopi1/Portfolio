@@ -247,8 +247,7 @@ a {
   font-size: 18px;
 }
 .news-block_inner {
-  min-height: 100px;
-  overflow: hidden;
+  height: 650px;
   padding-top: 11px;
   display: grid;
   grid-template-columns: repeat(4, 21.5%);
@@ -338,6 +337,11 @@ span a:hover {
   text-decoration: underline;
 }
 @media (max-width: 1170px) {
+  .news-block_inner {
+    overflow: hidden;
+    min-height: 100px;
+    height: auto;
+  }
   .panel {
     display: none;
   }

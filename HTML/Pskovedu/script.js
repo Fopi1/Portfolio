@@ -1,80 +1,16 @@
-let pastId = "1";
 let currentId = 0;
-let infoImgs = document.getElementsByClassName("info-img");
-let nextInfo = document.getElementById("nextInfo");
-let prevInfo = document.getElementById("prevInfo");
-
-const clickedId = (repliedId) => {
-  currentId = repliedId;
-  return repliedId;
-};
-
-const makeActive = (repliedId) => {
-  document
-    .getElementById(clickedId(repliedId))
-    .querySelector("button")
-    .classList.add("slider-active");
-};
-
-const makeDeactive = (repliedId) => {
-  document
-    .getElementById(pastId)
-    .querySelector("button")
-    .classList.remove("slider-active");
-  clickedId(repliedId);
-  pastId = currentId;
-};
-
-const switchSlide = () => {
-  document
-    .getElementById("description" + " " + currentId)
-    .classList.remove("hidden");
-  document.getElementById("description" + " " + pastId).classList.add("hidden");
-};
-
-const switchSliderAndSlide = (repliedId) => {
-  makeActive(repliedId);
-  if (pastId !== currentId) {
-    switchSlide();
-    makeDeactive(repliedId);
-  }
-};
-
-const nextSlide = () => {
-  currentId = Number(pastId) + 1;
-  if (currentId === 9) {
-    document.getElementById("nextSlide").classList.add("hidden");
-  } else {
-    document.getElementById("prevSlide").classList.remove("hidden");
-  }
-  document
-    .getElementById("news" + " " + String(currentId))
-    .classList.remove("hidden");
-  document
-    .getElementById("news" + " " + String(pastId))
-    .classList.add("hidden");
-  pastId = Number(pastId) + 1;
-};
-
-const prevSlide = () => {
-  currentId = Number(pastId);
-  if (currentId - 1 === 1) {
-    document.getElementById("prevSlide").classList.add("hidden");
-  } else {
-    document.getElementById("nextSlide").classList.remove("hidden");
-  }
-  document
-    .getElementById("news" + " " + String(pastId - 1))
-    .classList.remove("hidden");
-  document
-    .getElementById("news" + " " + String(currentId))
-    .classList.add("hidden");
-  pastId = Number(pastId) - 1;
-};
-
+let pastId = 1;
+// Imgs
+const infoImgs = document.getElementsByClassName("info-img");
+const nextInfo = document.getElementById("nextInfo");
+const prevInfo = document.getElementById("prevInfo");
+// News
+const newsBlocks = document.getElementsByClassName("news-block_inner");
+const nextNews = document.getElementById("nextNews");
+const prevNews = document.getElementById("prevNews");
+// Info
 const switchInfo = (infoNumber) => {
   for (let i = 0; i < infoImgs.length; i++) {
-    console.log(i);
     if (i !== infoNumber) {
       infoImgs[i].classList.add("hidden");
     } else {
@@ -99,4 +35,54 @@ prevInfo.onclick = function () {
 nextInfo.onclick = function () {
   let newInfo = currentId + 1;
   switchInfo(validNumberOfInfo(newInfo));
+};
+// Slide
+const switchSlide = (slideId) => {
+  if (slideId !== pastId) {
+    document
+      .getElementById(slideId)
+      .querySelector("button")
+      .classList.add("slider-active");
+    document
+      .getElementById("description" + " " + slideId)
+      .classList.remove("hidden");
+    document
+      .getElementById(pastId)
+      .querySelector("button")
+      .classList.remove("slider-active");
+    document
+      .getElementById("description" + " " + pastId)
+      .classList.add("hidden");
+    pastId = slideId;
+  }
+};
+// News-Block
+const switchNews = (newsNumber) => {
+  for (let i = 0; i < newsBlocks.length; i++) {
+    if (i !== newsNumber) {
+      newsBlocks[i].classList.add("hidden");
+    } else {
+      newsBlocks[i].classList.remove("hidden");
+    }
+  }
+};
+const validNumberOfNews = (newsNumber) => {
+  if (newsNumber <= 0) {
+    prevNews.classList.add("hidden");
+  } else if (newsNumber >= newsBlocks.length - 1) {
+    nextNews.classList.add("hidden");
+  } else {
+    prevNews.classList.remove("hidden");
+    nextNews.classList.remove("hidden");
+  }
+  currentId = newsNumber;
+  return currentId;
+};
+prevNews.onclick = function () {
+  let newNews = currentId - 1;
+  switchNews(validNumberOfNews(newNews));
+};
+nextNews.onclick = function () {
+  let newNews = currentId + 1;
+  switchNews(validNumberOfNews(newNews));
 };
