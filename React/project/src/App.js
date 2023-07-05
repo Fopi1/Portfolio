@@ -1,63 +1,34 @@
-import React, { useMemo, useState } from "react";
-import Counter from "./components/Counter";
-import ClassCounter from "./components/ClassCounter.jsx";
+import React from "react";
 import "./styles/App.css";
-import PostItem from "./components/PostItem";
-import PostList from "./components/PostList";
-import MyButton from "./components/UI/button/MyButton";
-import MyInput from "./components/UI/input/MyInput";
-import { useRef } from "react";
-import PostForm from "./components/PostForm";
-import MySelect from "./components/UI/select/MySelect";
-import PostFilter from "./components/PostFilter";
-import MyModal from "./components/UI/MyModal/MyModal";
+import { BrowserRouter } from "react-router-dom";
+import Navbar from "components/Navbar/Navbar";
+import AppRouter from "components/AppRouter";
+import { AuthContext } from "context";
+import { useState } from "react";
+import { useEffect } from "react";
 
 function App() {
-  const bodyInputRef = useRef();
-  const [filter, setFilter] = useState({ sort: "", query: "" });
-  const [modal, setModal] = useState(false);
-  const [posts, setPosts] = useState([
-    { id: 1, title: "аа", body: "бб" },
-    { id: 2, title: "гг 2", body: "аа" },
-    { id: 3, title: "вв 3", body: "яя" },
-  ]);
-
-  const removePost = (post) => {
-    setPosts(posts.filter((p) => p.id !== post.id));
-  };
-  const sortedPosts = useMemo(() => {
-    if (filter.sort) {
-      return [...posts].sort((a, b) =>
-        a[filter.sort].localeCompare(b[filter.sort])
-      );
+  const [isAuth, setIsAuth] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+  useEffect(() => {
+    if (localStorage.getItem("auth")) {
+      setIsAuth(true);
     }
-    return posts;
-  }, [filter.sort, posts]);
-  const sortedAndSearchedPosts = useMemo(() => {
-    return sortedPosts.filter((post) =>
-      post.title.toLowerCase().includes(filter.query)
-    );
-  }, [filter.query, filter.sort]);
-  const createPost = (newPost) => {
-    setPosts([...posts, newPost]);
-    setModal(false);
-  };
+    setIsLoading(false);
+  }, []);
   return (
-    <div className="App">
-      <MyButton style={{ marginTop: 30 }} onClick={() => setModal(true)}>
-        Создать пользователя
-      </MyButton>
-      <MyModal visible={modal} setVisible={setModal}>
-        <PostForm create={createPost} />
-      </MyModal>
-      <hr style={{ margin: "15px 0" }} />
-      <PostFilter filter={filter} setFilter={setFilter}></PostFilter>
-      <PostList
-        remove={removePost}
-        posts={sortedAndSearchedPosts}
-        title="Список постов"
-      />
-    </div>
+    <AuthContext.Provider
+      value={{
+        isAuth,
+        setIsAuth,
+        isLoading,
+      }}
+    >
+      <BrowserRouter>
+        <Navbar />
+        <AppRouter />
+      </BrowserRouter>
+    </AuthContext.Provider>
   );
 }
 

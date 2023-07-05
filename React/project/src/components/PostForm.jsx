@@ -8,7 +8,7 @@ function PostForm({ create }) {
     e.preventDefault();
     const newPost = {
       ...post,
-      id: Date.now,
+      id: Date.now(),
     };
     create(newPost);
     setPost({ title: "", body: "" });
