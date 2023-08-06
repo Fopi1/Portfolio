@@ -1,22 +1,16 @@
 import React from "react";
 import AccordionBody from "./components/Accordion/AccordionBody";
 import AccordionTitle from "./components/Accordion/AccordionTitle";
-import Star from "./components/Star/Star";
+import Rating from "./components/Rating/Rating";
 import "./styles/App.module.css";
 import cl from "./styles/App.module.css";
-
-function sum(a: number, b: number) {
-  console.log(a + b);
-}
 
 function App() {
   return (
     <div className={cl.center}>
-      <div>
-        <Star selected={true} />
-        <AccordionTitle />
-        <AccordionBody />
-      </div>
+      <Rating value={10} />
+      <AccordionTitle />
+      <AccordionBody />
     </div>
   );
 }
