@@ -32,7 +32,7 @@
   background-color: #5c59db;
 }
 .container {
-  overflow: hidden;
+  overflow: visible;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -57,7 +57,7 @@
 }
 .logo {
   border-radius: 15px;
-  box-shadow: 9px 10px 20px #0ac7a0;
+  box-shadow: 0 10px 20px #0ac7a0;
   width: 75px;
   height: 75px;
   position: relative;
@@ -78,6 +78,46 @@
 .subnav {
   display: flex;
   column-gap: 32px;
+}
+.navbar-mobile {
+  display: none;
+}
+.dropdown {
+  display: inline-block;
+  position: relative;
+  border-radius: 5px;
+  background-color: #9ea9f0;
+  width: 50px;
+}
+.dropdown__inner {
+  cursor: pointer;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 12px;
+}
+.dropdown-line::before {
+  content: "";
+  display: block;
+  height: 1px;
+  background-color: #000000;
+}
+.dropdown-content {
+  display: none;
+  border-radius: 5px;
+  background-color: #8896eb;
+  font-size: 20px;
+  min-width: 40px;
+  position: absolute;
+  right: 0;
+}
+.show {
+  display: block;
+}
+.dropdown-content a {
+  margin-left: 2px;
+  padding: 8px 0;
+  display: block;
 }
 .subnav a:first-of-type {
   font-weight: 800;
@@ -170,6 +210,7 @@
   height: fit-content;
 }
 .cards {
+  width: fit-content;
   display: flex;
   column-gap: 35px;
 }
@@ -200,11 +241,10 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  bottom: 0;
 }
 .card-image img {
   width: 182px;
-  height: 128px;
+  height: 118px;
 }
 .aside {
   position: absolute;
@@ -231,4 +271,48 @@
   position: absolute;
   right: 0;
   bottom: 7px;
+}
+@media (max-width: 1500px) {
+  .aside {
+    display: none;
+  }
+}
+@media (max-width: 1170px) {
+  .header {
+    display: inline-block;
+    column-gap: 0px;
+  }
+  .navbar {
+    margin-top: 50px;
+  }
+}
+@media (max-width: 880px) {
+  .header {
+    display: flex;
+    justify-content: space-between;
+  }
+  .navbar {
+    display: none;
+  }
+  .navbar-mobile {
+    display: inline-block;
+  }
+}
+@media (max-width: 505px) {
+  .offer-design__inner > div:first-of-type {
+    display: none;
+  }
+  .offer-design__inner {
+    grid-template-columns: 1fr;
+  }
+  .cards {
+    flex-wrap: wrap;
+    row-gap: 10px;
+  }
+  .card {
+    border-radius: 25px;
+  }
+  .navbar-mobile a {
+    font-size: 14px;
+  }
 }

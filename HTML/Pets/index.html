@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
+  <script src="./index.js" defer></script>
   <title>Document</title>
 </head>
 
@@ -14,11 +15,27 @@
       <header class="header">
         <div class="abbreviation">
           <div class="logo">
+            <div class="logo-shadow"></div>
             <img src="./imgs/logo.svg" alt="">
             <img src="./imgs/paw.svg" alt="">
           </div>
           <h2>HAPPY PET</h2>
         </div>
+        <nav class="navbar-mobile">
+          <div id="dropdown" onclick="myFunction()" class="dropdown">
+            <div class="dropdown__inner">
+              <div class="dropdown-line"></div>
+              <div class="dropdown-line"></div>
+              <div class="dropdown-line"></div>
+            </div>
+            <div id="dropdownContent" class="dropdown-content">
+              <a href="#">Главная</a>
+              <a href="#">Друзья</a>
+              <a href="#">О сервисе</a>
+              <a href="#">Контакты</a>
+            </div>
+          </div>
+        </nav>
         <nav class="navbar">
           <div class="subnav">
             <a href="#">Главная</a>
