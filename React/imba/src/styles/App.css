@@ -1,0 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.bg {
+  height: 100dvh;
+  background: url("./background.png") center no-repeat;
+  background-size: cover;
+}
+.container {
+  width: 100%;
+  max-width: 1540px;
+  margin: 0 auto;
+}
+.container__inner {
+  display: flex;
+  align-items: center;
+}
