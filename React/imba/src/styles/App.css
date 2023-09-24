@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Inter", sans-serif;
 }
 .bg {
   height: 100dvh;
@@ -10,10 +11,11 @@
 }
 .container {
   width: 100%;
-  max-width: 1540px;
+  max-width: 1860px;
   margin: 0 auto;
 }
 .container__inner {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }

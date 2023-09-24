@@ -1,0 +1,19 @@
+.filter_container {
+  width: 217px;
+  height: 328px;
+  background-color: #484848;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  border-right: 1px solid #000;
+  border-left: 1px solid #000;
+}
+.filter_button {
+  border: 1px solid #000;
+  width: 100%;
+  height: 67px;
+  background-color: rgba(44, 39, 35, 0.53);
+  color: #eaeaea;
+  font-size: 16px;
+  text-align: center;
+}
