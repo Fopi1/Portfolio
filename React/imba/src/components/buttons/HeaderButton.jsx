@@ -1,18 +1,40 @@
 import React from "react";
 import "./HeaderButton.css";
 
-const HeaderButton = ({ children, style, props }) => {
+const HeaderButton = ({
+  stateOfFilter,
+  stateOfModal,
+  children,
+  styleButton,
+  styleComponents,
+}) => {
+  let filterState = false;
   return (
-    <button {...props} style={style} className="HeaderButton">
-      {children.length > 1 ? (
-        <>
+    <>
+      {stateOfFilter !== undefined ? (
+        <button
+          onClick={() => {
+            stateOfFilter((filterState) => !filterState);
+            filterState = !filterState;
+          }}
+          style={styleButton}
+          className="HeaderButton"
+        >
           {children[0]}
           <span>{children[1]}</span>
-        </>
+        </button>
       ) : (
-        <span style={style}>{children}</span>
+        <button
+          onClick={() => {
+            stateOfModal(true);
+          }}
+          style={styleButton}
+          className="HeaderButton"
+        >
+          <span style={styleComponents}>{children}</span>
+        </button>
       )}
-    </button>
+    </>
   );
 };
 

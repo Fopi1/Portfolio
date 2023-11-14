@@ -1,0 +1,36 @@
+/* Task */
+.task {
+  font-weight: 300;
+  color: #fff;
+  border-bottom: 1px solid black;
+  height: 95px;
+  display: grid;
+  grid-template-columns: 40px 100px 820px 100px;
+}
+.task-element {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-right: 1px solid black;
+}
+
+/* Circle */
+
+.circle {
+  background-color: #4efb32;
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+}
+
+/* Date */
+
+.date {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  row-gap: 16px;
+}
+.current-date {
+  font-size: 16px;
+}

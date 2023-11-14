@@ -1,10 +1,14 @@
 import React from "react";
 import "./Filter.css";
+import FilterButton from "../buttons/FilterButton";
 
-const Filter = () => {
+const Filter = ({ filterState }) => {
   return (
-    <div className="filter_container">
-      <button className="filter_button">По дате добавления</button>
+    <div className={`filter_container ${filterState ? "show" : "hide"}`}>
+      <FilterButton>По дате добавления</FilterButton>
+      <FilterButton>По дате окончания</FilterButton>
+      <FilterButton>По алфавиту</FilterButton>
+      <FilterButton>По важности</FilterButton>
     </div>
   );
 };

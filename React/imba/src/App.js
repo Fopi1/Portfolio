@@ -1,6 +1,5 @@
 import TodoList from "./TodoList/TodoList";
 import Arrow from "./components/arrow/Arrow";
-import Filter from "./components/filter/Filter";
 import "./styles/App.css";
 
 function App() {
@@ -9,7 +8,7 @@ function App() {
       <div className="container">
         <div className="container__inner">
           <Arrow style={{ rotate: "180deg" }} />
-          <Filter />
+          РЕАЛИЗОВАТЬ ДОБАВЛЕНИЕ ПОСТОВ ПО КЛИКУ В МОДУЛЕ И СДЕЛАТЬ САМ МОДУЛЬ
           <TodoList />
           <Arrow />
         </div>
@@ -17,5 +16,4 @@ function App() {
     </div>
   );
 }
-
 export default App;
