@@ -1,7 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import Task from "../../components/task/Task";
+import { dateToSeconds } from ".../functions/dateToSeconds";
 
-const ToDoClosest = () => {
+const ToDoClosest = ({ taskStyles }) => {
+  const [taskStyle, setTaskStyle] = useState(taskStyles[0].date2);
+  for (let i = 0; i < taskStyles.length; i++) {
+    if (dateToSeconds(taskStyles[i].date2 > taskStyle))
+      setTaskStyle(taskStyle[i]);
+  }
+  console.log(taskStyle);
   return (
     <div style={{ backgroundColor: "rgba(34,32,32,0.5)" }}>
       <Task

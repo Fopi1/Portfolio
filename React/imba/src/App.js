@@ -8,7 +8,6 @@ function App() {
       <div className="container">
         <div className="container__inner">
           <Arrow style={{ rotate: "180deg" }} />
-          РЕАЛИЗОВАТЬ ДОБАВЛЕНИЕ ПОСТОВ ПО КЛИКУ В МОДУЛЕ И СДЕЛАТЬ САМ МОДУЛЬ
           <TodoList />
           <Arrow />
         </div>

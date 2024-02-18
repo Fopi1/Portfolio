@@ -1,15 +1,26 @@
 import React from "react";
 import "./Task.css";
 
-const Task = (props) => {
+const Task = (props, key) => {
+  let color = "";
+  switch (props.colorStyle) {
+    case 1:
+      color = "#4EFB32";
+      break;
+    case 2:
+      color = "#DFFB32";
+      break;
+    case 3:
+      color = "#FC2929";
+      break;
+    default:
+      break;
+  }
   return (
-    <div className="task">
+    <div className="task" key={key}>
       <div className="task-element">
         <div className="task-element__inner">
-          <div
-            className="circle"
-            style={{ backgroundColor: props.styles }}
-          ></div>
+          <div className="circle" style={{ backgroundColor: color }}></div>
         </div>
       </div>
       <div className="task-element">

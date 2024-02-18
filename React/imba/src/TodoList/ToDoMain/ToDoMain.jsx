@@ -3,11 +3,11 @@ import ToDoClosest from "../ToDoClosest/ToDoClosest";
 import ToDoTasks from "../ToDoTasks/ToDoTasks";
 import "./ToDoMain.css";
 
-const ToDoMain = () => {
+const ToDoMain = ({ taskStyles }) => {
   return (
     <div className="main">
-      <ToDoClosest />
-      <ToDoTasks />
+      <ToDoClosest taskStyles={taskStyles} />
+      <ToDoTasks taskStyles={taskStyles} />
     </div>
   );
 };
