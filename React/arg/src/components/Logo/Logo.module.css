@@ -1,0 +1,111 @@
+@property --rotate {
+  syntax: "<angle>";
+  initial-value: 132deg;
+  inherits: false;
+}
+.logoContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 180px;
+  height: 180px;
+  rotate: 45deg;
+  position: relative;
+  z-index: 0;
+}
+.logoContainerInner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 180px;
+  height: 180px;
+  background: #272727;
+  z-index: 3;
+}
+.logo {
+  width: 180px;
+  height: 180px;
+  border: 0px solid #a7a7a7;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+.logoSmall {
+  position: relative;
+  width: 103px;
+  height: 103px;
+  border: 10px solid #a7a7a7;
+}
+.logoSmall::before {
+  content: "";
+  position: absolute;
+  top: -34px;
+  right: -25px;
+  width: 40px;
+  height: 10px;
+  rotate: 90deg;
+  background-color: #a7a7a7;
+}
+.logoSmall::after {
+  content: "";
+  position: absolute;
+  bottom: -33px;
+  left: -25px;
+  width: 40px;
+  height: 10px;
+  rotate: 90deg;
+  background-color: #a7a7a7;
+}
+.logoSmallBottom {
+  width: 100px;
+  height: 100px;
+  border: 0px solid #a7a7a7;
+  position: absolute;
+  bottom: -10px;
+  right: -10px;
+}
+.logoSmallBottom::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 90px;
+  height: 10px;
+  background-color: #a7a7a7;
+}
+.logoSmallBottom::after {
+  content: "";
+  position: absolute;
+  top: 40px;
+  left: -40px;
+  width: 90px;
+  height: 10px;
+  rotate: 90deg;
+  background-color: #a7a7a7;
+}
+.logoContainer::before {
+  content: "";
+  width: 110%;
+  height: 110%;
+  background-image: linear-gradient(
+    var(--rotate),
+    #ffffff,
+    #a7a7a7 43%,
+    #a7a7a7
+  );
+  position: absolute;
+  z-index: -1;
+  top: -5%;
+  left: -5%;
+  animation: spin 2.5s linear infinite;
+}
+@keyframes spin {
+  0% {
+    --rotate: 0deg;
+  }
+  100% {
+    --rotate: 360deg;
+  }
+}
