@@ -20,6 +20,11 @@ const TodoList = () => {
   const forwardStyles = (props) => {
     setTaskStyles((prevStyle) => [...prevStyle, props]);
   };
+  const deleteStyle = (props) => {
+    setTaskStyles((prevStyle) =>
+      prevStyle.filter((item) => JSON.stringify(item) !== JSON.stringify(props))
+    );
+  };
   return (
     <div className="Todo_List">
       <TodoHeader
@@ -29,7 +34,7 @@ const TodoList = () => {
         setModal={setModal}
       />
       <Filter filterState={filterState} />
-      <ToDoMain taskStyles={taskStyles} />
+      <ToDoMain taskStyles={taskStyles} deleteStyle={deleteStyle} />
       <Modal visible={modal} setVisible={setModal}>
         <CreateForm forwardStyles={forwardStyles} />
       </Modal>

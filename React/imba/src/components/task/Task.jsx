@@ -1,7 +1,7 @@
 import React from "react";
 import "./Task.css";
 
-const Task = (props, key) => {
+const Task = ({ deleteStyle, ...props }) => {
   let color = "";
   switch (props.colorStyle) {
     case 1:
@@ -17,7 +17,7 @@ const Task = (props, key) => {
       break;
   }
   return (
-    <div className="task" key={key}>
+    <div className="task">
       <div className="task-element">
         <div className="task-element__inner">
           <div className="circle" style={{ backgroundColor: color }}></div>
@@ -41,6 +41,20 @@ const Task = (props, key) => {
             <div className="current-date">{props.date2}</div>
           </div>
         </div>
+      </div>
+      <div className="delete">
+        <button
+          className="delete-button"
+          onClick={() => {
+            deleteStyle({ ...props });
+          }}
+        >
+          <span
+            style={{ fontSize: "30px", color: "#56423D", fontWeight: "Bold" }}
+          >
+            X
+          </span>
+        </button>
       </div>
     </div>
   );
