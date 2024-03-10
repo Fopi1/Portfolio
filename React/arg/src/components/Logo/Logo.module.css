@@ -10,17 +10,17 @@
   width: 180px;
   height: 180px;
   rotate: 45deg;
-  position: relative;
+  position: static;
   z-index: 0;
 }
 .logoContainerInner {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 180px;
   height: 180px;
   background: #272727;
-  z-index: 3;
 }
 .logo {
   width: 180px;

@@ -1,14 +1,21 @@
 import React from "react";
 import Logo from "../Logo/Logo";
-import classes from "./ChronoMain.module.css";
+import "./ChronoMain.css";
+import Fog from "../Fog/Fog";
 
 const ChronoMain = () => {
   return (
-    <div className={classes.container}>
-      <div className={classes.smoke} />
-      <Logo />
-      <span className={classes.logoText}>ChronoTech</span>
-    </div>
+    <>
+      <div className="container">
+        <Fog />
+        <div className="container__inner">
+          <div className="logo__inner">
+            <Logo />
+          </div>
+          <span className="logoText">ChronoTech</span>
+        </div>
+      </div>
+    </>
   );
 };
 

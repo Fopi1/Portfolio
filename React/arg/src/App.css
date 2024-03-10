@@ -3,37 +3,3 @@
   padding: 0;
   box-sizing: border-box;
 }
-@font-face {
-  font-family: Orbitron;
-  src: url(./fonts/Orbitron-Black.ttf);
-  font-weight: normal;
-}
-.container {
-  position: relative;
-  height: 100dvh;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #272727;
-  font-family: Orbitron;
-}
-.logoText {
-  position: absolute;
-  bottom: 10%;
-  margin-top: 0%;
-  color: rgba(0, 0, 0, 0);
-  font-size: 150px;
-  -webkit-text-stroke: 5px rgba(255, 255, 255, 0.4);
-  text-shadow: 0px 4px 20px rgba(255, 255, 255, 0.8);
-  /* filter: drop-shadow(0px 6px 0px rgba(255, 255, 255, 1)); */
-}
-.smoke {
-  height: 100dvh;
-  width: 100%;
-  position: absolute;
-  background: url(./components/etc/1621703619_22-phonoteka_org-p-dim-bez-zadnego-fona-28.png)
-    center no-repeat;
-  background-size: cover;
-  pointer-events: none;
-}
