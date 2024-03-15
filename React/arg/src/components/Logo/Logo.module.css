@@ -1,3 +1,6 @@
+:root {
+  --logo: calc(100vw / 10.7);
+}
 @property --rotate {
   syntax: "<angle>";
   initial-value: 132deg;
@@ -7,8 +10,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 180px;
-  height: 180px;
+  width: var(--logo);
+  height: var(--logo);
   rotate: 45deg;
   position: static;
   z-index: 0;
@@ -18,13 +21,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 180px;
-  height: 180px;
+  width: var(--logo);
+  height: var(--logo);
   background: #272727;
 }
 .logo {
-  width: 180px;
-  height: 180px;
+  width: var(--logo);
+  height: var(--logo);
   border: 0px solid #a7a7a7;
   position: relative;
   display: flex;
@@ -34,58 +37,62 @@
 }
 .logoSmall {
   position: relative;
-  width: 103px;
-  height: 103px;
-  border: 10px solid #a7a7a7;
+  width: calc(var(--logo) / 1.8);
+  height: calc(var(--logo) / 1.8);
+  border: calc(var(--logo) / 15) solid #a7a7a7;
 }
 .logoSmall::before {
   content: "";
   position: absolute;
-  top: -34px;
-  right: -25px;
-  width: 40px;
-  height: 10px;
+  top: calc(var(--logo) / 5.4 * -1);
+  right: calc(var(--logo) / 6 * -1);
+  width: calc(var(--logo) / 3.8);
+  height: calc(var(--logo) / 16);
   rotate: 90deg;
   background-color: #a7a7a7;
 }
 .logoSmall::after {
   content: "";
   position: absolute;
-  bottom: -33px;
-  left: -25px;
-  width: 40px;
-  height: 10px;
+  bottom: calc(var(--logo) / 5.5 * -1);
+  left: calc(var(--logo) / 6.2 * -1);
+  width: calc(var(--logo) / 3.8);
+  height: calc(var(--logo) / 16);
   rotate: 90deg;
   background-color: #a7a7a7;
 }
 .logoSmallBottom {
-  width: 100px;
-  height: 100px;
+  overflow: visible;
+  width: calc(var(--logo) / 1.8);
+  height: calc(var(--logo) / 1.8);
   border: 0px solid #a7a7a7;
   position: absolute;
-  bottom: -10px;
-  right: -10px;
+  bottom: calc(var(--logo) / 18 * -1);
+  right: calc(var(--logo) / 18 * -1);
 }
 .logoSmallBottom::before {
   content: "";
   position: absolute;
-  top: 0px;
-  left: 0px;
-  width: 90px;
-  height: 10px;
+  top: 0;
+  left: 0;
+  width: calc(var(--logo) / 2);
+  height: calc(var(--logo) / 18);
+  transform: rotate(180deg) translate(0%, 30%);
+  transform-origin: center center;
   background-color: #a7a7a7;
 }
 .logoSmallBottom::after {
   content: "";
   position: absolute;
-  top: 40px;
-  left: -40px;
-  width: 90px;
-  height: 10px;
-  rotate: 90deg;
+  bottom: 0;
+  left: 0;
+  width: calc(var(--logo) / 2);
+  height: calc(var(--logo) / 18);
+  transform: rotate(90deg) translate(-55%, 430%);
+  transform-origin: center center;
   background-color: #a7a7a7;
 }
-.logoContainer::before {
+.logoContainer::after {
   content: "";
   width: 110%;
   height: 110%;
@@ -97,8 +104,6 @@
   );
   position: absolute;
   z-index: -1;
-  top: -5%;
-  left: -5%;
   animation: spin 2.5s linear infinite;
 }
 @keyframes spin {
@@ -107,5 +112,65 @@
   }
   100% {
     --rotate: 360deg;
+  }
+}
+@media (max-width: 1440px) {
+  .logoSmall::before {
+    top: calc(var(--logo) / 5.5 * -1);
+    right: calc(var(--logo) / 6.3 * -1);
+  }
+}
+@media (max-width: 700px) {
+  .logoSmall::before {
+    top: calc(var(--logo) / 5.9 * -1);
+    right: calc(var(--logo) / 6.5 * -1);
+  }
+  .logoSmall::after {
+    bottom: calc(var(--logo) / 5.9 * -1);
+    left: calc(var(--logo) / 6.2 * -1);
+  }
+}
+@media (max-width: 425px) {
+  .logoSmall::before {
+    top: calc(var(--logo) / 6 * -1);
+    right: calc(var(--logo) / 6.4 * -1);
+  }
+  .logoSmall::after {
+    bottom: calc(var(--logo) / 5.4 * -1);
+    left: calc(var(--logo) / 6.2 * -1);
+  }
+}
+@media (max-width: 375px) {
+  .logoSmall::before {
+    top: calc(var(--logo) / 5.4 * -1);
+    right: calc(var(--logo) / 7 * -1);
+  }
+  .logoSmall::after {
+    bottom: calc(var(--logo) / 5.9 * -1);
+    left: calc(var(--logo) / 5.8 * -1);
+  }
+}
+@media (max-width: 320px) {
+  .logoSmall::before {
+    top: calc(var(--logo) / 5.9 * -1);
+    right: calc(var(--logo) / 7.5 * -1);
+    width: calc(var(--logo) / 3.8);
+    height: calc(var(--logo) / 20);
+  }
+  .logoSmall::after {
+    bottom: calc(var(--logo) / 5.7 * -1);
+    left: calc(var(--logo) / 6.1 * -1);
+    width: calc(var(--logo) / 3.8);
+    height: calc(var(--logo) / 20);
+  }
+  .logoSmallBottom::before {
+    width: calc(var(--logo) / 2);
+    height: calc(var(--logo) / 20);
+    transform: rotate(180deg) translate(0%, 30%);
+  }
+  .logoSmallBottom::after {
+    width: calc(var(--logo) / 2);
+    height: calc(var(--logo) / 20);
+    transform: rotate(90deg) translate(-55%, 500%);
   }
 }

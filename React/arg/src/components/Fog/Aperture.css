@@ -1,0 +1,11 @@
+.fog {
+  height: 100%;
+  width: 100%;
+  top: 0;
+  position: absolute;
+  background: url("../etc/Spoilers_-Portal-2-Act-5-Menu-Screen-_HD_-_online-video-cutter.com_.gif")
+    no-repeat center;
+  background-size: cover;
+  pointer-events: none;
+  filter: blur(3px);
+}
