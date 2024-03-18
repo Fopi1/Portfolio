@@ -31,7 +31,6 @@ const CreateForm = (props) => {
     setSwitcher(updatedSwitchers);
   };
   const array = [task, time2, date2];
-  index += 1;
   return (
     <div onClick={(e) => e.stopPropagation()} className="form-container">
       <MyError isError={isError} />
@@ -102,6 +101,7 @@ const CreateForm = (props) => {
             date2: date2.current.value.split("-").reverse().join("."),
             index: index,
           });
+          index += 1;
         }}
       >
         Добавить задание

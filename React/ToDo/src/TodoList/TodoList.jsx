@@ -27,7 +27,8 @@ const TodoList = () => {
     );
   };
   const filterTasks = (id) => {
-    setTaskStyles(filterTask(id, taskStyles));
+    let filteredTask = filterTask(id, taskStyles);
+    setTaskStyles(filteredTask);
   };
   return (
     <div className="Todo_List">

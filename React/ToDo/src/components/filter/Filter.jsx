@@ -17,10 +17,10 @@ const Filter = ({ filterState, filterTasks }) => {
         <FilterButton filterTasks={filterTasks} id={"filterEndDate"}>
           По дате окончания
         </FilterButton>
-        <FilterButton filterTasks={filterTasks} id={"filterABC"}>
+        <FilterButton filterTasks={filterTasks} id={"filterAlphabet"}>
           По алфавиту
         </FilterButton>
-        <FilterButton filterTasks={filterTasks} id={"filterImportant"}>
+        <FilterButton filterTasks={filterTasks} id={"filterImportance"}>
           По важности
         </FilterButton>
       </div>
