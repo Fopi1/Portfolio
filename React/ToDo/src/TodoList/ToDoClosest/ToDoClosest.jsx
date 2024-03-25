@@ -9,8 +9,8 @@ const ToDoClosest = ({ taskStyles, deleteStyle }) => {
     tempTaskStyle = taskStyles[0];
     for (let i = 0; i < taskStyles.length; i++) {
       if (
-        dateToSeconds(taskStyles[i].time2, taskStyles[i].date2) <
-        dateToSeconds(tempTaskStyle.time2, tempTaskStyle.date2)
+        dateToSeconds(taskStyles[i].endTime, taskStyles[i].endDate) <
+        dateToSeconds(tempTaskStyle.endTime, tempTaskStyle.endDate)
       ) {
         tempTaskStyle = taskStyles[i];
       }

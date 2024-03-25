@@ -11,8 +11,8 @@ const CreateForm = (props) => {
   const time = useRef(0);
   const date = useRef(0);
   const task = useRef(0);
-  const time2 = useRef(0);
-  const date2 = useRef(0);
+  const endTime = useRef(0);
+  const endDate = useRef(0);
   const [isError, setIsError] = useState(false);
   const [switchers, setSwitcher] = useState([
     { id: 1, active: true, color: "green" },
@@ -30,7 +30,7 @@ const CreateForm = (props) => {
     });
     setSwitcher(updatedSwitchers);
   };
-  const array = [task, time2, date2];
+  const array = [task, endTime, endDate];
   return (
     <div onClick={(e) => e.stopPropagation()} className="form-container">
       <MyError isError={isError} />
@@ -73,10 +73,10 @@ const CreateForm = (props) => {
           <div className="form-of-task-element_inner">
             <div className="date">
               <div className="time">
-                <MyInput ref={time2} type={"time"} placeholder={"Время"} />
+                <MyInput ref={endTime} type={"time"} placeholder={"Время"} />
               </div>
               <div className="current-date">
-                <MyInput ref={date2} type={"date"} placeholder={"Дата"} />
+                <MyInput ref={endDate} type={"date"} placeholder={"Дата"} />
               </div>
             </div>
           </div>
@@ -97,9 +97,13 @@ const CreateForm = (props) => {
             time: time.current.innerText,
             date: date.current.innerText,
             task: task.current.value,
-            time2: time2.current.value,
-            date2: date2.current.value.split("-").reverse().join("."),
+            endTime: endTime.current.value,
+            endDate: endDate.current.value.split("-").reverse().join("."),
             index: index,
+            dateRank: 0,
+            endDateRank: 0,
+            alphabetRank: 0,
+            importanceRank: 0,
           });
           index += 1;
         }}

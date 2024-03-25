@@ -37,8 +37,8 @@ const Task = ({ deleteStyle, ...props }) => {
       <div className="task-element">
         <div className="task-element__inner">
           <div className="date">
-            <div className="time">{props.time2}</div>
-            <div className="current-date">{props.date2}</div>
+            <div className="time">{props.endTime}</div>
+            <div className="current-date">{props.endDate}</div>
           </div>
         </div>
       </div>

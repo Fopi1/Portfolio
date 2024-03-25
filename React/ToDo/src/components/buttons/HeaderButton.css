@@ -10,4 +10,5 @@
   width: auto;
   height: 50px;
   text-align: center;
+  z-index: 1;
 }

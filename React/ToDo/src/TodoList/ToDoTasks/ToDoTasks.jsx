@@ -5,8 +5,13 @@ const ToDoTasks = ({ taskStyles, deleteStyle }) => {
   return (
     <div>
       {taskStyles.map((task) => {
-        let key = taskStyles.indexOf(task);
-        return <Task deleteStyle={deleteStyle} key={key} {...task} />;
+        return (
+          <Task
+            deleteStyle={deleteStyle}
+            key={taskStyles.indexOf(task)}
+            {...task}
+          />
+        );
       })}
     </div>
   );

@@ -1,11 +1,11 @@
-const dateToSeconds = (time2, date2) => {
-  time2 = time2.split(":");
-  date2 = date2.split(".");
-  let hours = Number(time2[0]);
-  let minutes = Number(time2[1]);
-  let days = Number(date2[0]);
-  let months = Number(date2[1]);
-  let years = Number(date2[2]);
+const dateToSeconds = (endTime, endDate) => {
+  endTime = endTime.split(":");
+  endDate = endDate.split(".");
+  let hours = Number(endTime[0]);
+  let minutes = Number(endTime[1]);
+  let days = Number(endDate[0]);
+  let months = Number(endDate[1]);
+  let years = Number(endDate[2]);
   let daysForMonts = 30;
   let result = 0;
   if (months in [1, 3, 5, 7, 8, 10, 12]) {

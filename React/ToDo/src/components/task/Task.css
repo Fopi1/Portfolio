@@ -5,7 +5,7 @@
   border-bottom: 1px solid black;
   height: 95px;
   display: grid;
-  grid-template-columns: 40px 100px 820px 100px;
+  grid-template-columns: 4% 10% 76% 10%;
   position: relative;
 }
 .task:hover .delete {

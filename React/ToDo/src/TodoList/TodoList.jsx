@@ -27,9 +27,9 @@ const TodoList = () => {
     );
   };
   const filterTasks = (id) => {
-    let filteredTask = filterTask(id, taskStyles);
-    setTaskStyles(filteredTask);
+    setTaskStyles([...filterTask(id, taskStyles)]);
   };
+  console.log(taskStyles);
   return (
     <div className="Todo_List">
       <TodoHeader
