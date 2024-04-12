@@ -1,0 +1,401 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+}
+<<<<<<< HEAD
+.hidden {
+  display: none !important;
+}
+.container-main {
+  max-width: 1170px;
+  width: 100%;
+=======
+.container-main {
+  width: 72%;
+>>>>>>> dd1c85c (pskovedu)
+  margin: 0 auto;
+}
+.container {
+  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+  width: 100%;
+  margin: 0 auto;
+}
+/* header */
+.header_inner p {
+  margin-right: auto;
+  color: #fff;
+}
+.header_inner a {
+  color: #fff;
+}
+.header_inner a:hover {
+  color: #333;
+}
+.header_inner {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.container {
+  background-color: #63aae1;
+}
+.header_inner > div {
+  display: flex;
+  flex-shrink: 0;
+  padding: 15px 30px;
+}
+.header_inner p {
+  padding-left: 15px;
+}
+.header_inner li {
+  padding-left: 25px;
+}
+/* Panels */
+.main {
+  display: flex;
+  flex-shrink: 0;
+  justify-content: space-between;
+  padding: 16px 30px 0 30px;
+<<<<<<< HEAD
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: 0 auto;
+}
+.panel {
+  display: block;
+  color: #fff;
+  width: 66%;
+}
+.panel-description {
+  height: 229px;
+}
+.panel-description ul {
+  padding: 10px 0 0 0px;
+  margin-left: 65px;
+}
+.panel-description h3 {
+  padding: 25px 0 0 15px;
+}
+.panel-slider {
+  margin-top: 36px;
+}
+.panel-slider_inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+.slider-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+  border: none;
+}
+.slider-circle {
+  cursor: pointer;
+  width: 6px;
+  height: 6px;
+  background-color: rgb(158, 168, 172);
+  border-radius: 100%;
+  border: none;
+}
+.slider-circle:hover {
+  background-color: #63aae1;
+}
+.slider-button:hover .slider-circle {
+  background-color: #63aae1;
+}
+.slider-active {
+  background-color: #f3c351 !important;
+}
+.login-forms {
+  width: 34%;
+  padding: 0 15px 17px 40px;
+}
+.login-forms_inner {
+  padding-top: 15px;
+=======
+  margin: 0 auto;
+}
+.main {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.panel {
+  color: #fff;
+  background-color: #7782d2;
+  width: 66%;
+}
+.panel_inner {
+  margin: 25px 0 0 15px;
+}
+.panel_inner ul {
+  padding: 10px 0 0 0;
+  margin-left: 40px;
+}
+.login-forms {
+  width: 34%;
+  padding: 17px 15px 17px 40px;
+>>>>>>> dd1c85c (pskovedu)
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 25px;
+}
+/* Fonts-size */
+.text-xl {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 26px;
+}
+.text-lg {
+  font-size: 18px;
+  line-height: 20px;
+  font-weight: 400;
+}
+.text-md {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+}
+.text-btn {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 35px;
+}
+<<<<<<< HEAD
+.manual-text-btn {
+  font-size: 17px;
+  line-height: 24px;
+  font-weight: 400;
+}
+/* Buttons */
+.btn {
+  text-align: center;
+=======
+/* Buttons */
+.btn {
+>>>>>>> dd1c85c (pskovedu)
+  font-family: inherit;
+  display: inline-block;
+  padding: 7px;
+  color: #fff;
+  border-radius: 5px;
+  background-color: #333;
+  cursor: pointer;
+}
+.btn-blue {
+  background-color: #0088cc;
+  border: #2e6da4 solid 1px;
+}
+.btn-blue:hover {
+  background-color: #0077b3;
+}
+.btn-green {
+  background-color: #5dba5d;
+  border: #4cae4c solid 1px;
+}
+.btn-green:hover {
+  background-color: #4cb24c;
+}
+.btn-red {
+  background-color: #d24d70;
+  border: #d43f3a solid 1px;
+}
+.btn-red:hover {
+  background-color: #cd3960;
+}
+<<<<<<< HEAD
+/* Apps */
+.secondary {
+  padding: 17px 50px 0 50px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.secondary h3 {
+  color: #63aae1;
+}
+.secondary h3::after {
+  content: "";
+  display: block;
+  width: 100%;
+  background-color: #63aae1;
+  height: 1px;
+  margin-top: 10px;
+}
+.apps-block {
+  padding-bottom: 30px;
+  margin: 10px 12px 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.apps-block img {
+  margin: 0 7px;
+  max-width: 150px;
+}
+/* News */
+.news-block {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+.news-block > button:hover {
+  background-color: rgb(118, 173, 212);
+}
+.click-next {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: -25px;
+  border: none;
+  color: #fff;
+  background-color: #5d92b9;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+.click-prev {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: -25px;
+  border: none;
+  color: #fff;
+  background-color: #5d92b9;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+.text_inner {
+  font-weight: 900;
+  font-size: 18px;
+}
+.news-block_inner {
+  height: 650px;
+  padding-top: 11px;
+  display: grid;
+  grid-template-columns: repeat(4, 21.5%);
+  justify-content: space-around;
+}
+.news > * {
+  display: block;
+}
+.news a:hover {
+  color: #23527c;
+}
+span a:hover {
+  text-decoration: underline;
+}
+.news a {
+  color: #337ab7;
+}
+.news-date {
+  color: #f3b92e;
+}
+.news-text {
+  color: #333;
+  padding-top: 10px;
+}
+/* Information */
+.information h3 {
+  padding-top: 46px;
+}
+.information-block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.information-block img {
+  padding-top: 10px;
+}
+/* Manual */
+.manuals h3 {
+  padding-top: 35px;
+}
+.manuals-block {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 20px;
+}
+.manuals-block > * {
+  margin-left: 20px;
+}
+.manual-button {
+  text-align: center;
+  color: #fff;
+  margin-top: 20px;
+  border: 1px solid #63aae1;
+  background-color: #63aae1;
+}
+.manual-button:hover {
+  text-decoration: underline;
+  background-color: #f2b219;
+  border-color: #f2b219;
+  color: white;
+}
+.manual-icon {
+  padding: 10px 30px 20px 30px;
+  display: block;
+  font-size: 2.5em;
+}
+/* Footer */
+.footer {
+  background-color: #63aae1;
+}
+.footer_inner {
+  color: #fff;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  padding: 5px 15px 5px 15px;
+}
+.footer_inner p {
+  padding-bottom: 5px;
+}
+.footer_inner a {
+  margin-left: 3px;
+  color: #fff;
+}
+.footer_inner a:hover {
+  text-decoration: underline;
+}
+@media (max-width: 1170px) {
+  .news-block_inner {
+    overflow: hidden;
+    min-height: 100px;
+    height: auto;
+  }
+  .panel {
+    display: none;
+  }
+  .login-forms {
+    width: 100%;
+  }
+  .information-block img {
+    max-width: 700px;
+  }
+}
+@media (max-width: 700px) {
+  .information,
+  .information-block,
+  .manuals,
+  .manuals-block {
+    display: none;
+  }
+  .apps-block {
+    display: block;
+  }
+}
+=======
+>>>>>>> dd1c85c (pskovedu)

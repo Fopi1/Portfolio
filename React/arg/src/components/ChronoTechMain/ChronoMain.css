@@ -1,0 +1,91 @@
+@font-face {
+  font-family: CAT;
+  src: url(../../fonts/Comic_CAT.otf);
+  font-weight: normal;
+}
+@font-face {
+  font-family: Orbitron;
+  src: url(../../fonts/Orbitron-Black.ttf);
+  font-weight: normal;
+}
+.container {
+  height: 100dvh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #272727;
+  font-family: Orbitron;
+}
+.container__inner {
+  margin-top: calc(100vw / 38.4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.logo__inner {
+  animation: entryLogo 3s linear;
+}
+.logoText {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  animation: entryText 3s linear;
+  color: rgba(0, 0, 0, 0);
+  font-size: calc(100vw / 13);
+  -webkit-text-stroke: calc(100vw / 384) rgba(255, 255, 255, 0.4);
+  text-shadow: 0px 4px 20px rgba(255, 255, 255, 0.8);
+  z-index: 0;
+}
+.description-container {
+  font-size: 18px;
+  font-family: CAT;
+  position: relative;
+  max-width: 950px;
+  width: 100%;
+  background-color: rgba(190, 190, 190, 0.85);
+  height: 100%;
+  text-align: center;
+  box-shadow: 0 -4px 100px 20px rgba(190, 190, 190, 0.9);
+  z-index: 0;
+}
+@keyframes entryLogo {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes entryText {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@media (min-width: 1921px) {
+  .description-container {
+    font-size: 24px;
+    max-width: 100%;
+    width: 55%;
+  }
+}
+@media (max-width: 1100px) {
+  .description-container {
+    font-size: 14px;
+  }
+}
+@media (max-width: 760px) {
+  .description-container {
+    font-size: 12px;
+  }
+}

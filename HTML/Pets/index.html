@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="./index.js" defer></script>
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="bg">
+    <div class="container">
+      <header class="header">
+        <div class="abbreviation">
+          <div class="logo">
+            <div class="logo-shadow"></div>
+            <img src="./imgs/logo.svg" alt="">
+            <img src="./imgs/paw.svg" alt="">
+          </div>
+          <h2>HAPPY PET</h2>
+        </div>
+        <nav class="navbar-mobile">
+          <div id="dropdown" onclick="myFunction()" class="dropdown">
+            <div class="dropdown__inner">
+              <div class="dropdown-line"></div>
+              <div class="dropdown-line"></div>
+              <div class="dropdown-line"></div>
+            </div>
+            <div id="dropdownContent" class="dropdown-content">
+              <a href="#">Главная</a>
+              <a href="#">Друзья</a>
+              <a href="#">О сервисе</a>
+              <a href="#">Контакты</a>
+            </div>
+          </div>
+        </nav>
+        <nav class="navbar">
+          <div class="subnav">
+            <a href="#">Главная</a>
+            <a href="#">Друзья</a>
+            <a href="#">О сервисе</a>
+            <a href="#">Контакты</a>
+          </div>
+          <div class="phone">
+            <img src="./imgs/phone.png" width="27" height="27" alt="">
+            <a href="tel: +74951234567">+7 965 483-23-95</a>
+          </div>
+          <div class="shopping-cart">
+            <div class="circle">
+              <img src="./imgs/shopping-cart.png" width="35" height="33" alt="">
+            </div>
+            <p>0 р.</p>
+            <div class="triangle__outer">
+              <div class="triangle-down"></div>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <main class="offer-design">
+        <div class="offer-design__inner">
+          <div>
+            <h2>Твой новый друг с доставкой на дом</h2>
+            <p>Онлайн-магазин домашних животных - удобное решение, когда лень выходить из дома</p>
+          </div>
+          <div>
+            <a href="#">Посмотреть друзей</a>
+          </div>
+        </div>
+      </main>
+      <footer class="footer">
+        <div class="cards">
+          <div class="card">
+            <div class="card-description">
+              <p class="card-text">Собаки</p>
+              <p class="card-arrow">&#8594;</p>
+            </div>
+            <div class="card-image">
+              <img src="./imgs/dog.png" alt="">
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-description">
+              <p class="card-text">Еноты</p>
+              <p class="card-arrow">&#8594;</p>
+            </div>
+            <div class="card-image">
+              <img src="./imgs/raccoon.png" alt="">
+            </div>
+          </div>
+        </div>
+      </footer>
+      <aside class="aside">
+        <div class="light"></div>
+        <img class="dog" src="./imgs/dog-absolute.png" width="703" height="697" alt="">
+        <img class="cat" src="./imgs/cat absolute.png" width="445" height="501" alt="">
+      </aside>
+    </div>
+  </div>
+</body>
+
+</html>

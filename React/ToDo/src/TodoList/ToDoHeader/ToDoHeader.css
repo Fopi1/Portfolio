@@ -1,0 +1,18 @@
+.Todo_Header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #000;
+  padding: 25px 10px 25px 10px;
+}
+.pages-container {
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 20px;
+  margin-right: 35px;
+}
+.Todo_Header > div HeaderButton:last-child {
+  padding-right: 20px;
+}

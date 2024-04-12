@@ -1,0 +1,29 @@
+.filter-container {
+  top: -40%;
+  position: absolute;
+  left: -218px;
+  width: 217px;
+  height: 328px;
+  background-color: #484848;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  border-left: 1px solid #000;
+}
+.filter-container-enter-done {
+  transform: translateY(116%);
+}
+.filter-container-enter-active {
+  transform: translateY(116%);
+  transition: transform 0.5s;
+}
+.filter-container-exit {
+  top: 0;
+}
+.filter-container-exit-active {
+  transform: translateY(-116%);
+  transition: transform 0.5s;
+}
+.filter-container-exit-done {
+  transform: translateY(-116%);
+}

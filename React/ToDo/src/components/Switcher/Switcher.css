@@ -1,0 +1,48 @@
+.switches {
+  display: flex;
+  row-gap: 50px;
+  flex-direction: column;
+}
+.switch-btn {
+  position: relative;
+  display: inline-block;
+  width: 60px; /* ширина переключателя */
+  height: 20px; /* высота переключателя */
+  border-radius: 12px; /* радиус скругления */
+  background: #1a1717; /* цвет фона */
+  z-index: 0;
+  margin-left: 10px;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  transition-duration: 300ms; /* анимация */
+}
+.switch-btn::after {
+  content: "";
+  height: 20px; /* высота кнопки */
+  width: 20px; /* ширина кнопки */
+  border-radius: 18px; /* радиус кнопки */
+  background: #fff; /* цвет кнопки */
+  transition-duration: 300ms; /* анимация */
+  box-shadow: 0 0 10px 0 #35302c; /* тень */
+  position: absolute;
+  z-index: 1;
+}
+.switch-on {
+  transition-duration: 300ms;
+  position: relative;
+  background: #897172;
+}
+.switch-on::after {
+  transform: translateX(200%);
+  transition-duration: 300ms;
+}
+.green::after {
+  background: #4efb32;
+}
+.yellow::after {
+  background: #dffb32;
+}
+.red::after {
+  background: #fc2929;
+}

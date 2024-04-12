@@ -1,0 +1,14 @@
+.HeaderButton {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  background-color: #7bbec7;
+  border: none;
+  padding: 10px;
+  font-size: 24px;
+  width: auto;
+  height: 50px;
+  text-align: center;
+  z-index: 1;
+}
