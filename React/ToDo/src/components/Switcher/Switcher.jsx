@@ -1,7 +1,7 @@
 import React from "react";
 import "./Switcher.css";
 
-const Switcher = ({ id, active, color, handleClick, ref }) => {
+const Switcher = ({ id, active, color, handleClick }) => {
   return (
     <>
       <div

@@ -1,20 +1,18 @@
-import TodoList from "./TodoList/TodoList";
-import PageProvider from "./components/PageContext/PageContext";
-import Arrow from "./components/arrow/Arrow";
-import "./styles/App.css";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import PageProvider from "./Context/PageContext";
+import "./App.css";
+import MainPage from "./pages/MainPage/MainPage";
+import BindsPage from "./pages/BindsPage/BindsPage";
 
 function App() {
   return (
     <PageProvider>
-      <div className="bg">
-        <div className="container">
-          <div className="container__inner">
-            <Arrow style={{ rotate: "180deg" }} />
-            <TodoList />
-            <Arrow />
-          </div>
-        </div>
-      </div>
+      <BrowserRouter>
+        <Routes>
+          <Route path={"/"} element={<MainPage />} />
+          <Route path={"/binds"} element={<BindsPage />} />
+        </Routes>
+      </BrowserRouter>
     </PageProvider>
   );
 }

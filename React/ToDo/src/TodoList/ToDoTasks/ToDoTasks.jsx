@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import Task from "../../components/task/Task";
-import { CurrentPageContext } from "../../components/PageContext/PageContext";
+import { CurrentPageContext } from "../../Context/PageContext";
 
 const ToDoTasks = ({ taskStyles, deleteStyle }) => {
   let { currentPage, addCurrentPage: _ } = useContext(CurrentPageContext);

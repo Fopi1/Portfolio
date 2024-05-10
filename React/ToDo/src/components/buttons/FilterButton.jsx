@@ -1,20 +1,13 @@
 import React from "react";
 import "./FilterButton.css";
-let idArray = [];
 
-const FilterButton = ({ children, filterTasks, id }) => {
+const FilterButton = ({ children, id, isChecked, handleIsChecked }) => {
   return (
     <input
       onClick={() => {
-        if (idArray.includes(id)) {
-          idArray = idArray.filter((e) => e !== id);
-          filterTasks(id + "!");
-        } else {
-          idArray.push(id);
-          filterTasks(id);
-        }
+        handleIsChecked(id);
       }}
-      className="filter-button"
+      className={`filter-button ${isChecked ? "checked" : ""}`}
       type="checkbox"
       value={children}
     />

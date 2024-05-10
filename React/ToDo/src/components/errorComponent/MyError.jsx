@@ -1,6 +1,6 @@
 import React from "react";
 import { CSSTransition } from "react-transition-group";
-import Arrow from "../arrow/Arrow";
+import Arrow from "../arrows/Arrow";
 import "./MyError.css";
 
 const MyError = ({ isError }) => {

@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import Task from "../../components/task/Task";
 import { dateToSeconds } from "../../functions/dateToSeconds";
-import { CurrentPageContext } from "../../components/PageContext/PageContext";
+import { CurrentPageContext } from "../../Context/PageContext";
 
 const ToDoClosest = ({ taskStyles, deleteStyle }) => {
   const { currentPage, addCurrentPage: _ } = useContext(CurrentPageContext);

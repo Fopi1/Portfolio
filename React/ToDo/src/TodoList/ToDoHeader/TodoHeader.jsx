@@ -1,33 +1,45 @@
 import React, { useContext } from "react";
+import { Link } from "react-router-dom";
 import "./ToDoHeader.css";
-import HeaderButton from "../../components/buttons/HeaderButton";
-import ButtonArrow from "../../components/arrow/ButtonArrow";
-import {
-  CurrentPageContext,
-  PageContext,
-} from "../../components/PageContext/PageContext";
+import Button from "../../components/buttons/button";
+import ButtonArrow from "../../components/arrows/ButtonArrow";
+import { CurrentPageContext, PageContext } from "../../Context/PageContext";
+import BindsLogo from "../../components/BindsLogo/BindsLogo";
 
 const TodoHeader = ({ stateOfFilter, stateOfModal }) => {
   const { pages, addPages: _ } = useContext(PageContext);
   const { currentPage, addCurrentPage: __ } = useContext(CurrentPageContext);
   return (
-    <div className="Todo_Header">
-      <HeaderButton stateOfFilter={stateOfFilter}>
-        <ButtonArrow style={{ margin: "5px 15px 0 10px" }} /> Фильтр
-      </HeaderButton>
+    <div className="Todo-Header">
+      <div className="Todo-Header-wrapper">
+        <Button stateCallback={stateOfFilter}>
+          <ButtonArrow style={{ marginTop: 5, rotate: "90deg" }} /> Фильтр
+        </Button>
+        <Link to="/binds">
+          <Button>
+            <BindsLogo>B</BindsLogo>
+            Бинды
+          </Button>
+        </Link>
+      </div>
       <div className="pages-container">
         <span>Количество страниц:</span>
         <div className="pages">
           {currentPage + 1}/{pages + 1}
         </div>
       </div>
-      <HeaderButton
-        stateOfModal={stateOfModal}
-        styleComponents={{ fontSize: "50px", marginBottom: "6px" }}
-        styleButton={{ marginRight: "20px" }}
+      <Button
+        stateCallback={stateOfModal}
+        styleButton={{
+          marginRight: 20,
+          fontSize: 50,
+        }}
+        styleComponents={{
+          marginBottom: 6,
+        }}
       >
         +
-      </HeaderButton>
+      </Button>
     </div>
   );
 };

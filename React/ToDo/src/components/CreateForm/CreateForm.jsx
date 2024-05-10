@@ -4,15 +4,13 @@ import Switcher from "../Switcher/Switcher";
 import MyInput from "../myInput/MyInput";
 import MyTextArea from "../MyTextArea/MyTextArea";
 import MyError from "../errorComponent/MyError";
-let index = 0;
-let colorStyle = 1;
+import { useMultipleRefs } from "../../hooks/useMultipleRefs";
 
-const CreateForm = (props) => {
-  const time = useRef(0);
-  const date = useRef(0);
-  const task = useRef(0);
-  const endTime = useRef(0);
-  const endDate = useRef(0);
+const CreateForm = ({ forwardStyles }) => {
+  const [time, date, task, endTime, endDate] = useMultipleRefs(5, 0);
+  const index = useRef(0);
+  const colorStyle = useRef(1);
+  const needsValuesOfTask = [task, endTime, endDate];
   const [isError, setIsError] = useState(false);
   const [switchers, setSwitcher] = useState([
     { id: 1, active: true, color: "green" },
@@ -22,7 +20,7 @@ const CreateForm = (props) => {
   const handleClick = (clickedSwitcherId) => {
     const updatedSwitchers = switchers.map((switcher) => {
       if (switcher.id === clickedSwitcherId) {
-        colorStyle = switcher.id;
+        colorStyle.current = switcher.id;
         return { ...switcher, active: true };
       } else {
         return { ...switcher, active: false };
@@ -30,7 +28,6 @@ const CreateForm = (props) => {
     });
     setSwitcher(updatedSwitchers);
   };
-  const array = [task, endTime, endDate];
   return (
     <div onClick={(e) => e.stopPropagation()} className="form-container">
       <MyError isError={isError} />
@@ -85,27 +82,27 @@ const CreateForm = (props) => {
       <div
         className="confirm-button"
         onClick={() => {
-          for (let i = 0; i < array.length; i++) {
-            if (array[i].current.value === "") {
+          for (let i = 0; i < needsValuesOfTask.length; i++) {
+            if (needsValuesOfTask[i].current.value === "") {
               setIsError(true);
               return 0;
             }
           }
           setIsError(false);
-          props.forwardStyles({
-            colorStyle: colorStyle,
+          forwardStyles({
+            colorStyle: colorStyle.current,
             time: time.current.innerText,
             date: date.current.innerText,
             task: task.current.value,
             endTime: endTime.current.value,
             endDate: endDate.current.value.split("-").reverse().join("."),
-            index: index,
+            index: index.current,
             dateRank: 0,
             endDateRank: 0,
             alphabetRank: 0,
             importanceRank: 0,
           });
-          index += 1;
+          index.current += 1;
         }}
       >
         Добавить задание

@@ -1,0 +1,23 @@
+.logo-firstLayer {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  background: #70a5f7;
+  box-shadow: inset 2px -2px 2px rgba(0, 0, 0, 0.5);
+  border-radius: 2px;
+}
+.logo-secondLayer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  color: #fff;
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  width: 20px;
+  height: 20px;
+  background: #9f9f9f;
+  box-shadow: inset 2px -2px 6px rgba(0, 0, 0, 0.5);
+  border-radius: 2px;
+}

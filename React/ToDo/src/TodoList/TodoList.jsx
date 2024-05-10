@@ -4,93 +4,98 @@ import ToDoMain from "./ToDoMain/ToDoMain";
 import Filter from "../components/filter/Filter";
 import Modal from "../components/Modal/Modal";
 import CreateForm from "../components/CreateForm/CreateForm";
-import { filterTask } from "../functions/filterTask";
+import { filterTasks } from "../functions/filterTasks";
 import "./TodoList.css";
 import {
   CurrentPageContext,
   PageContext,
-} from "../components/PageContext/PageContext";
-import { keyShortcuts } from "../functions/keyShortcuts";
+  TaskContext,
+} from "../Context/PageContext";
+import { binds } from "../functions/binds";
 
 const TodoList = () => {
-  const [filterState, setFilterState] = useState(false);
-  const [modal, setModal] = useState(false);
-  const { pages, addPages } = useContext(PageContext);
-  const { currentPage, addCurrentPage } = useContext(CurrentPageContext);
-  const [taskStyles, setTaskStyles] = useState([[]]);
-
+  // =============================================================================
+  // STATES
+  const [filterState, setFilterState] = useState(false); // Filter state
+  const [modal, setModal] = useState(false); // Modal state
+  // =============================================================================
+  // CONTEXTS
+  const { pages, addPages } = useContext(PageContext); // Pages context
+  const { currentPage, addCurrentPage } = useContext(CurrentPageContext); // Current page context
+  const { taskStyles, setTaskStyles } = useContext(TaskContext); // Task context
+  // =============================================================================
+  // CALLBACKS
   const stateOfFilter = (value) => {
     setFilterState(value);
   };
   const stateOfModal = (value) => {
     setModal(value);
   };
-  // Добавить ToDo
+  // =============================================================================
+  // FUNCTIONS
+  // Add Todo task to task styles array
   const forwardStyles = (tasks) => {
-    if (taskStyles[pages].length >= 8 && taskStyles[currentPage].length >= 8) {
-      setTaskStyles((prevStyle) => {
-        let prevTaskStyle = [...prevStyle];
-        prevTaskStyle.push([]);
-        return prevTaskStyle;
-      });
+    const isAllPagesFull = taskStyles[pages].length >= 8;
+    const isCurrentPageFull = taskStyles[currentPage].length >= 8;
+
+    // Check if all the pages are full and forward styles to the newly created page
+    if (isAllPagesFull && isCurrentPageFull) {
+      setTaskStyles((prevStyle) => [...prevStyle, []]);
       addPages(1);
-      forwardStylesToNewPage(tasks, true);
-    } else if (taskStyles[currentPage].length >= 8) {
+      forwardStylesToNewPage({ tasks: tasks, isAllPagesFull: true });
+    }
+    // Check if the current page are full and forward styles to new page without adding new page
+    else if (isCurrentPageFull) {
       forwardStylesToNewPage(tasks);
-    } else {
+    }
+    // Add the task to the current page
+    else {
       setTaskStyles((prevStyle) => {
-        let prevTaskStyle = [...prevStyle];
+        const prevTaskStyle = [...prevStyle];
         prevTaskStyle[currentPage].push(tasks);
         return prevTaskStyle;
       });
     }
   };
-  // Добавить ToDo на новую страницу
-  const forwardStylesToNewPage = (tasks, condition = false) => {
-    if (condition) {
-      setTaskStyles((prevStyle) => {
-        let prevTaskStyle = [...prevStyle];
+  // Add Todo tasks to a new page of task styles array (if needed)
+  const forwardStylesToNewPage = ({ tasks, isAllPagesFull = false }) => {
+    setTaskStyles((prevStyle) => {
+      const prevTaskStyle = [...prevStyle];
+      if (isAllPagesFull) {
         prevTaskStyle[pages + 1].push(tasks);
-        return prevTaskStyle;
-      });
-    } else {
-      setTaskStyles((prevStyle) => {
-        let prevTaskStyle = [...prevStyle];
+      } else {
         prevTaskStyle[pages].push(tasks);
-        return prevTaskStyle;
-      });
-    }
+      }
+      return prevTaskStyle;
+    });
   };
-  // Удалить какое-то ToDo
+  // Delete Todo from task styles array
   const deleteStyle = (tasks) => {
-    if (taskStyles[currentPage].length === 1 && currentPage !== 0) {
-      setTaskStyles((prevStyle) => {
-        let prevTaskStyle = [...prevStyle];
-        prevTaskStyle[currentPage] = prevTaskStyle[currentPage].filter(
-          (item) => JSON.stringify(item) !== JSON.stringify(tasks)
-        );
+    setTaskStyles((prevStyle) => {
+      const prevTaskStyle = [...prevStyle];
+      prevTaskStyle[currentPage] = prevTaskStyle[currentPage].filter(
+        (item) => JSON.stringify(item) !== JSON.stringify(tasks)
+      );
+      // Check if current page doesnt equal to first page and delete it
+      if (taskStyles[currentPage].length === 1 && currentPage !== 0) {
         prevTaskStyle.splice(currentPage, 1);
-        return prevTaskStyle;
-      });
-      addCurrentPage(-1);
-      addPages(-1);
-    } else {
-      setTaskStyles((prevStyle) => {
-        let prevTaskStyle = [...prevStyle];
-        prevTaskStyle[currentPage] = prevTaskStyle[currentPage].filter(
-          (item) => JSON.stringify(item) !== JSON.stringify(tasks)
-        );
-        return prevTaskStyle;
-      });
-    }
+        addCurrentPage(-1);
+        addPages(-1);
+      }
+      return prevTaskStyle;
+    });
   };
-  // Фильтрация ToDo
-  const filterTasks = (id) => {
-    setTaskStyles([...filterTask(currentPage, id, taskStyles)]);
+  // Sorting Todo
+  const setFilteredTasks = (id) => {
+    setTaskStyles([...filterTasks(pages, currentPage, taskStyles, id)]);
   };
-  // Использование биндов
+  // Returning the Todo order to its original appearance when changing the current page
   useEffect(() => {
-    const handleKeyShortcuts = keyShortcuts(
+    setTaskStyles([...filterTasks(pages, currentPage, taskStyles)]);
+  }, [currentPage]);
+  // Keybinds
+  useEffect(() => {
+    const handleKeyShortcuts = binds(
       addCurrentPage,
       setModal,
       setFilterState,
@@ -110,7 +115,7 @@ const TodoList = () => {
         modal={modal}
         setModal={setModal}
       />
-      <Filter filterState={filterState} filterTasks={filterTasks} />
+      <Filter filterState={filterState} filterTasks={setFilteredTasks} />
       <ToDoMain taskStyles={taskStyles} deleteStyle={deleteStyle} />
       <Modal visible={modal} setVisible={setModal}>
         <CreateForm forwardStyles={forwardStyles} />

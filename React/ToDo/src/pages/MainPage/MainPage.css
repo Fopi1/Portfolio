@@ -1,0 +1,19 @@
+.bg__main {
+  height: 100dvh;
+  background: url("../../images/background-main.png") center no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+.container__main {
+  overflow: auto;
+  height: 100dvh;
+  width: 100%;
+  max-width: 1860px;
+  margin: 0 auto;
+}
+.container__main__inner {
+  height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

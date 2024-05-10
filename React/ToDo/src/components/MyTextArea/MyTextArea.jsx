@@ -1,10 +1,10 @@
 import React, { forwardRef } from "react";
 import "./MyTextArea.css";
 
-const MyTextArea = forwardRef((props, ref) => {
+const MyTextArea = forwardRef(({ placeholder }, ref) => {
   return (
     <textarea
-      {...props}
+      placeholder={placeholder}
       ref={ref}
       maxLength="168"
       type="text"
